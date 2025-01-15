@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap");
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+body {
+  background: #181a1b;
+  cursor: pointer;
+}
+
+.tags-container {
+  background: #181a1b;
+}
+
+.tags-cloud {
+  position: fixed;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  height: 90vmin;
+  width: 90vmin;
+  list-style: none;
+  opacity: 0;
+}
+
+.tags-cloud.-loaded {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.tags-cloud > .tag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.5s linear, opacity 0.5s linear;
+  text-align: center;
+}
+
+.tags-cloud > .tag > .wrap {
+  display: inline-block;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.wrap img {
+  width: 80px;
+}
+
+@media (max-width: 768px) {
+  .tags-cloud {
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    height: 90vmin;
+    width: 90vmin;
+  }
+
+  .wrap img {
+    width: 35px;
+  }
+}
