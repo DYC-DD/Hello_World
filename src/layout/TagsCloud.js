@@ -26,7 +26,7 @@ class TagsCloud {
     this.sphere = new FibonacciSphere(this.tags.length);
     this.rotationAxis = [0.707, 0.707, 0];
     this.rotationAngle = 0;
-    this.rotationSpeed = 0.005;
+    this.rotationSpeed = 0.002;
 
     this.updatePositions();
     this.initEventListeners();
@@ -338,7 +338,7 @@ const TagsCloudComponent = () => {
       const cloud = new TagsCloud(root);
 
       if (cloud.isMobile()) {
-        cloud.rotationSpeed = 0.008;
+        cloud.rotationSpeed = 0.003;
       }
 
       cloud.start();
